@@ -1,0 +1,4 @@
+<view class='content'>
+    <image mode="aspectFit" style="position: relative;align-items: center;justify-content: center;width: 100%;" src="../../images/qrcodeabu.png"></image>
+    <button bindtap="popupConfirm" type="warn">保存</button>
+</view>

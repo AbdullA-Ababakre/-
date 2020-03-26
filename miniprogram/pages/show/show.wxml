@@ -1,0 +1,73 @@
+<scroll-view scroll-y style="height:100%;" bindscroll="scroll">
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+    <swiper-item>
+      <image class="swiper-item" src="../../images/how-to-ask-for-help.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item" src="../../images/how-to-ask-for-help.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="swiper-item" src="../../images/how-to-ask-for-help.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{arr}}" wx:item="item" wx:key="*this" class="">
+    <view class="weui-form-preview block">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">终点: {{item.end}}</view>
+          <view class="weui-form-preview__value_in-hd">{{item.sex}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">起点</view>
+          <view class="weui-form-preview__value">{{item.start}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">出发时间</view>
+          <view class="weui-form-preview__value">{{item.start_time}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">报酬</view>
+          <view class="weui-form-preview__value">{{item.money}}</view>
+        </view>
+      </view>
+      <view id="{{item._id}}" class="weui-form-preview__ft get_order" bindtap="getOrder">
+        <view class="weui-form-preview__btn weui-form-preview__btn_primary get_order_btn" hover-class="weui-form-preview__btn_active">
+          接单
+        </view>
+      </view>
+    </view>
+  </block>
+  <view style="height:150rpx"></view>
+</scroll-view>
+<view class="add {{showToolBar?'active':''}}">
+  <view class="add-item" data-type="0" bindtap="onAdd">
+    <text class="add-item-txt">拼伞</text>
+  </view>
+  <view class="add-item" data-type="1" bindtap="onBorrowReturn">
+    <text class="add-item-txt">借还伞</text>
+  </view>
+  <view class="add-item" data-type="2" bindtap="onPersonal">
+    <text class="add-item-txt">个人</text>
+  </view>
+  <view class="add-icon" bindtap="onToggle">
+    <text class="add-icon-txt {{showIconRotate?'addIconRotate':''}}">+</text>
+  </view>
+</view>
+<view class="overlay {{flag===true?'':'nodisplay'}}"></view>
+<view class="dialog {{flag===true?'':'nodisplay'}}" style="border-radius: 0;">
+  <view>
+    <view class="dlg_btn" style="background-color: #f5c46c;">多多分享,可以提高成功率哦!!</view>
+    <view class="dlg_btn" bindtap="cancelShare">残忍拒绝</view>
+    <view class="dlg_btn dlg_btn_qrCode" bindtap="toqrcodepage">
+      <navigator url="../../pages/shareqrcode/shareqrcode" class="navigator">分享到朋友圈</navigator>
+    </view>
+    <!-- <view class="dlg_btn" bindtap="shureShare" style="background-color: #fc4c43;color: white;border-radius: 0;" data-name="shareBtn" open-type="share" plain="true">
+      分享群和好友！！！！
+    </view> -->
+    <view class="dlg_btn dlg_btn_group" style="background-color: #fc4c43;color: white;border-radius: 0;">
+      <button class="shareGroupBtn" open-type='share' plain="true">分享群和好友！！！！</button>
+    </view>
+  </view>
+</view>

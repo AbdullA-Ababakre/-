@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/show/show",
+    "pages/shareqrcode/shareqrcode",
+    "pages/aboutMe/myBorrow/myBorrow",
+    "pages/borrowReturn/borrowReturn",
+    "pages/aboutMe/mySent/mySent",
+    "pages/aboutMe/myGet/myGet",
+    "pages/order/order",
+    "pages/aboutMe/aboutMe"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f5c46c",
+    "navigationBarTitleText": "DD拼伞",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

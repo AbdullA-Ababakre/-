@@ -1,0 +1,6 @@
+.content{
+ text-align: justify;
+ margin-right: 0;
+ margin-left: 0;
+ background-color: #ddd;
+}
